@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [26/Aug/2015:00:30:04 -0400] "GET /springmvc-angular/test HTTP/1.1" 200 23 http-bio-8080-exec-1 3971
+0:0:0:0:0:0:0:1 - - [26/Aug/2015:00:30:05 -0400] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-3 0
