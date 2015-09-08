@@ -1,1 +1,2 @@
-tutorial\mvc\TestController.class
+tutorial\rest\resources\AccountListResource.class
+tutorial\rest\resources\asm\AccountListResourceAsm.class
