@@ -22,8 +22,9 @@ public class BlogEntryListResourceAsm extends ResourceAssemblerSupport<BlogEntry
         List<BlogEntryResource> resources = new BlogEntryResourceAsm().toResources(list.getEntries());
         BlogEntryListResource listResource = new BlogEntryListResource();
         listResource.setEntries(resources);
+        listResource.setTitle(list.getBlogId().toString());
         listResource.add(linkTo(methodOn(BlogController.class).findAllBlogEntries(list.getBlogId())).withSelfRel());
         return listResource;
 
     }
-}
+} 

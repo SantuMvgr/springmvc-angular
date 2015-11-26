@@ -1,4 +1,4 @@
-angular.module('ngBoilerPlate.blog', ['ui.router', 'ngBoilerPlate.account', 'ngResource', 'hateoas'])
+angular.module('ngBoilerPlate.blog', ['ui.router', 'ngBoilerPlate.account','ngBoilerPlate.blogEntry', 'ngResource', 'hateoas'])
     .config(function($stateProvider) {
         $stateProvider.state('manageBlogs', {
             url: '/manage/blogs?accountId',
@@ -46,6 +46,16 @@ angular.module('ngBoilerPlate.blog', ['ui.router', 'ngBoilerPlate.account', 'ngR
                 );
             });
             return deferred.promise;
+        };
+        service.findAllBlogEntries = function(blogId) {
+            var BlogEntry =$resource("/springmvc-angular/rest/blogs/:paramBlogId/blog-entries");
+            return BlogEntry.get({paramBlogId:blogId}).$promise.then(function(data) {
+                return data;
+            });
+        };
+        service.createBlogEntry = function(blogId, blogEntryData) {
+            var BlogEntry = $resource("/springmvc-angular/rest/blogs/:paramBlogId/blog-entries");
+            return BlogEntry.save({paramBlogId: blogId}, blogEntryData).$promise;
         };
         return service;
     })

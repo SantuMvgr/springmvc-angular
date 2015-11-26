@@ -1,4 +1,4 @@
-angular.module('ngBoilerPlate.account',['ui.router', 'ngResource'])
+ angular.module('ngBoilerPlate.account',['ui.router', 'ngResource'])
     .config(function($stateProvider) {
         $stateProvider.state('login', {
             url: '/login',

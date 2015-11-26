@@ -1,0 +1,24 @@
+<div class="row no-gutters">
+    <h1>Blog - {{title}}</h1>
+</div>
+<div class="row no-gutters">
+       Title <input type="text" class="form-control" ng-model="newBlogTitle" style="width: 500px; margin-bottom: 10px;">
+       Content <textarea class="form-control" style="width: 500px; height: 200px; margin-bottom: 10px;" ng-model="newBlogContent"></textarea>
+        <button class="btn btn-default" type="button" ng-click="createBlogEntry(newBlogTitle, newBlogContent)" style="margin-bottom: 20px;">Create Blog Entry</button>
+</div>
+<div class="row no-gutters" >
+    <table class="table table-striped">
+        <th>Blog Entries</th>
+        <th>Content</th>
+        <th>Action</th>
+        <tr ng-repeat="blogEntry in blogEntries">
+            <td>{{blogEntry.title}}</td>
+            <td>{{blogEntry.content}}</td>
+            <td>
+                <a ng-click="deleteBlogEntry(blogEntry)" class="btn btn-large btn-default">
+                    Delete
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
